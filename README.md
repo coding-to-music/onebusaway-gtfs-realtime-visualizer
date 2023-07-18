@@ -1,6 +1,6 @@
 # onebusaway-gtfs-realtime-visualizer
 
-# 🚀 A demo application to visualize GTFS Realtime feeds. 🚀
+# 🚀 A java-based application that consumes a GTFS Realtime feed and visualizes it on a map. Uses Apache Maven 🚀
 
 https://github.com/coding-to-music/onebusaway-gtfs-realtime-visualizer
 
