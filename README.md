@@ -34,6 +34,14 @@ In the demo project, we'll walk you through a simple Java-based program that con
 
 If you want to follow along at home, you can [download a ZIP of the source-code for the demo project](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer/zipball/master) or [import the code from the Git repository directly](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer). The project is designed to be built with [Apache Maven](http://maven.apache.org/), so download that if you are interested in building and running the project.
 
+## Verify Java is installed
+
+```
+openjdk 11.0.19 2023-04-18
+OpenJDK Runtime Environment (build 11.0.19+7-post-Ubuntu-0ubuntu120.04.1)
+OpenJDK 64-Bit Server VM (build 11.0.19+7-post-Ubuntu-0ubuntu120.04.1, mixed mode, sharing)
+```
+
 ## Upgrade Apache Maven
 
 https://maven.apache.org/
@@ -110,6 +118,12 @@ Now that the project has been built, you should be able to run the resulting app
 
     java -jar target/onebusaway-GTFS Realtime-visualizer-0.0.1-SNAPSHOT.jar \
       --vehiclePositionsUrl=https://cdn.mbta.com/realtime/VehiclePositions.pb
+
+Getting this error:
+
+```
+Error: Unable to access jarfile target/onebusaway-GTFS
+```
 
 This will start the application up using [MBTA's GTFS Realtime feeds](http://mbta.com/rider_tools/developers/default.asp?id=22393). When the application starts, you should see a message like:
 
