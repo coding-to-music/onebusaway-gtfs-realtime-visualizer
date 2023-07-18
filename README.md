@@ -34,6 +34,72 @@ In the demo project, we'll walk you through a simple Java-based program that con
 
 If you want to follow along at home, you can [download a ZIP of the source-code for the demo project](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer/zipball/master) or [import the code from the Git repository directly](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer). The project is designed to be built with [Apache Maven](http://maven.apache.org/), so download that if you are interested in building and running the project.
 
+## Upgrade Apache Maven
+
+https://maven.apache.org/
+
+Current version of Maven
+
+```
+mvn --version
+```
+
+```java
+Apache Maven 3.6.3
+Maven home: /usr/share/maven
+Java version: 11.0.19, vendor: Ubuntu, runtime: /usr/lib/jvm/java-11-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.4.0-153-generic", arch: "amd64", family: "unix"
+```
+
+Remove the existing Maven installation:
+
+```java
+sudo apt remove maven
+```
+
+Download the latest version of Apache Maven using wget:
+
+https://maven.apache.org/download.cgi
+
+```java
+wget https://downloads.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz
+```
+
+Extract the downloaded archive:
+
+```java
+tar -xzf apache-maven-3.9.3-bin.tar.gz
+```
+
+Move the extracted Maven directory to /usr/share to match the previous installation location:
+
+```java
+sudo mv apache-maven-3.9.3 /usr/share/maven
+```
+
+Update the symbolic link for mvn command:
+
+```java
+sudo ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+```
+
+Verify the Maven installation by running the following command:
+
+```java
+mvn --version
+```
+
+It should display the new Maven version (3.9.0).
+
+```java
+Apache Maven 3.9.3
+Maven home: /usr/share/maven
+Java version: 11.0.19, vendor: Ubuntu, runtime: /usr/lib/jvm/java-11-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.4.0-153-generic", arch: "amd64", family: "unix"
+```
+
 ## Running the Demo Project
 
 Before we dig into how the demo application the works, let's see it in action! After you've downloaded the code for the project, open up a terminal and change to the root directory of the project. From there, run Maven to compile and package the application:
