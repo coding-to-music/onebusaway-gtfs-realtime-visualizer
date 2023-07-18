@@ -1,0 +1,12 @@
+{
+  "name": "onebusaway-gtfs-realtime-visualizer",
+  "version": "1.0.0",
+  "description": "onebusaway-gtfs-realtime-visualizer [![Java CI with Maven](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer/actions/workflows/maven.yml/badge.svg)](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer/actions/workflows/maven.yml) ======================",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

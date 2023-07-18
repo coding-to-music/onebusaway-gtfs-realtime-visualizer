@@ -4,3 +4,17 @@ pom.xml.releaseBackup
 .settings
 .project
 .classpath
+
+package-lock.json
+
+# GTFS files
+gtfs/
+*.zip
+
+# python virtualenv
+env/
+env
+# env/lib64
+
+# environment variables
+.env
