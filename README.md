@@ -116,13 +116,29 @@ Before we dig into how the demo application the works, let's see it in action! A
 
 Now that the project has been built, you should be able to run the resulting application bundle:
 
-    java -jar target/onebusaway-GTFS Realtime-visualizer-0.0.1-SNAPSHOT.jar \
-      --vehiclePositionsUrl=https://cdn.mbta.com/realtime/VehiclePositions.pb
+```
+java -jar target/onebusaway-GTFS Realtime-visualizer-0.0.1-SNAPSHOT.jar \
+  --vehiclePositionsUrl=https://cdn.mbta.com/realtime/VehiclePositions.pb
+```
 
 Getting this error:
 
 ```
 Error: Unable to access jarfile target/onebusaway-GTFS
+```
+
+Subdirectory target (created by `mvn package`) contains (among other things):
+
+```
+original-onebusaway-gtfs-realtime-visualizer-0.0.1-SNAPSHOT.jar
+onebusaway-gtfs-realtime-visualizer-0.0.1-SNAPSHOT.jar
+```
+
+Try this:
+
+```
+java -jar target/onebusaway-gtfs-realtime-visualizer-0.0.1-SNAPSHOT.jar \
+  --vehiclePositionsUrl=https://cdn.mbta.com/realtime/VehiclePositions.pb
 ```
 
 This will start the application up using [MBTA's GTFS Realtime feeds](http://mbta.com/rider_tools/developers/default.asp?id=22393). When the application starts, you should see a message like:
@@ -146,6 +162,10 @@ java --add-modules java.xml.ws.annotation -jar target/onebusaway-gtfs-realtime-v
 Refer [this issue](https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer/issues/10) for details.
 
 So browse to [http://localhost:8080/](http://localhost:8080/) and take a look! The map update uses a number of HTML5 technologies, so be sure to use a modern browser like [Google Chrome](https://www.google.com/chrome) for the best experience. If all goes well, you should see a map of real-time vehicle positions that update over time.
+
+Works!
+
+![VehicleMovements](/images/VehicleMovements.png)
 
 Please note that if you use this application with your own GTFS-rt vehicle positions feed, the `VehicleDescriptor` must contain the `id` field, such as:
 
